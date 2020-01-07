@@ -1,22 +1,34 @@
 # https://www.quora.com/The-wheel-diameter-is-0-3-meters-how-many-times-does-the-wheel-rotate-for-each-kilometer-travelled
 # https://www.researchgate.net/post/What_is_the_maximum_voltage_and_amphere_for_a_single_piezoelectric_element_recorded_is_it_PZT_lead_titanate_ceramics_or_lead_metaniobate_ceramics (2nd answer)
 
+
+#import libraries
 import yaml
 
-piezos = []
-cars = []
 
+#List of items with possible inputs-
+piezos = []   # pizo disk/piezo actuator/ piezo tile
+cars = []     # type of car(suv/sedan/hatchback etc)
+tires= []      # tires with different size, material, weight , dimension etc (to be added in output)
+
+
+# Load input data 
 with open('piezos.yaml', 'r') as file: 
     piezos = yaml.load(file, Loader=yaml.FullLoader)
 
 with open('cars.yaml', 'r') as file:
     cars = yaml.load(file, Loader=yaml.FullLoader)
+    
+with open('tires.yaml', 'r') as file:
+    tires = yaml.load(file, Loader=yaml.FullLoader)
 
+    
+# Output function    
 for car in cars:
     for piezo in piezos:
         print(car['name'] + ' with ' + piezo['name'])
         
-        units_under_pressure_per_spin = int(piezo['amount'] / 6)
+        units_under_pressure_per_spin = int(piezo['amount'] / 6)    
         units_under_pressure = int(units_under_pressure_per_spin * 4)
         unit_output_per_spin = 1 * (piezo['size'] * piezo['max_output_per_mm']) 
         units_output_per_spin = 1 * (units_under_pressure_per_spin * unit_output_per_spin)
