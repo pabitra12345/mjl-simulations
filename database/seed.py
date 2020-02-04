@@ -11,7 +11,7 @@ scenarios = []
 cars.append({ 'id': 1, 'name': 'Tesla Model 3', 'weight': 1611 })
 cars.append({ 'id': 2, 'name': 'Rivian R1T', 'weight': 1800 })
 
-piezos.append({ 'id': 1, 'name': 'DuraAct', 'weight': 20, 'width': 35, 'length': 61, 'height': 1, 'min_output': 10, 'max_output': 1000 })
+piezos.append({ 'id': 1, 'name': 'DuraAct', 'weight': 20, 'width': 35, 'length': 61, 'height': 1, 'min_output_volts': 10, 'max_output_volts': 1000, 'avg_output_amp':100 })
 
 tires.append({ 'id': 1, 'name': '225/45 R17', 'section_width': 225, 'aspect_ratio': 0.45, 'wheel_diameter': 17, 'weight': 4000 })
 
