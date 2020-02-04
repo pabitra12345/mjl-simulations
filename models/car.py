@@ -16,7 +16,7 @@ class Car:
     def drive(self, scenario):
         units = int(scenario.setup.amount_sidewall + scenario.setup.amount_base)
 
-        amp = ((scenario.setup.piezo.width + scenario.setup.piezo.length) / 2) * 0.1
+        amp = ((scenario.setup.piezo.avg_output_amp) * 0.1
 
         min_units_output_per_spin = units * scenario.setup.piezo.min_output
         max_units_output_per_spin = units * scenario.setup.piezo.max_output
